@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -12,9 +12,24 @@ export class NameGeneratorComponent {
   petNames: string [] = ["Berit", "Pepsi", "Hjördis", "Bob", "Pelle"]
   randomName: string = "";
 
-  generateRandomName(){
+  @Output() generatedName = new EventEmitter<string>()
+  
+
+  generateRandomName(): string {
     const index = Math.floor(Math.random() * this.petNames.length)
-    this.randomName = this.petNames[index]
+    return this.petNames[index]
   }
+
+  assignRandomName(){
+    this.randomName = this.generateRandomName();
+    this.generatedName.emit(this.randomName)
+
+    
+  }
+
+
+  
+
+  
 
 }

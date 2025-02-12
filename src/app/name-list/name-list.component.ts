@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-name-list',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './name-list.component.css'
 })
 export class NameListComponent {
+
+  //ta emot listan av genererade namn från appComponent via @Input
+
+
+  @Input() listOfGeneratedNames: string[] = []
+
+  
 
 }
