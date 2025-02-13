@@ -1,9 +1,17 @@
-<div>
-  <a routerLink="/name-generator">Generate pet name</a>
-  <a routerLink="/name-list">See list of already generated names</a>
+<div class="nav">
+  <div class="logo">
+    <h2 class="logo-name">Pet name generator</h2>
+  </div>
+  
+  <div class="nav-links">
+    <a routerLink="/name-generator">Home</a>
+    <a routerLink="/name-list">See list of already generated names</a>
+
+  </div>
+ 
 </div>
 
-<app-name-generator (generatedName)="addGeneratedNameToList($event)"></app-name-generator>
+<app-name-generator (generatedName)="addGeneratedNameToList($event)" ></app-name-generator>
 <app-name-list [listOfGeneratedNames] = "listOfGeneratedNames" ></app-name-list>
 
 <!---Tar emot namnet från name-generator.component eventEmitter och kopplar det till app.component

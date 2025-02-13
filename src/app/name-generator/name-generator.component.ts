@@ -9,8 +9,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NameGeneratorComponent {
 
-  petNames: string [] = ["Berit", "Pepsi", "Hjördis", "Bob", "Pelle"]
+  petNames: string [] = ["Berit", "Pepsi", "Hjördis", "Bob", "Pelle", "Daisy", "Rocky", "Bodil", "Selma", "Pyret", "Fluffy"]
   randomName: string = "";
+  previousName: string = ""
+
 
   @Output() generatedName = new EventEmitter<string>()
   
@@ -21,8 +23,18 @@ export class NameGeneratorComponent {
   }
 
   assignRandomName(){
-    this.randomName = this.generateRandomName();
-    this.generatedName.emit(this.randomName)
+    let newRandomName = this.generateRandomName()   
+    
+    while(newRandomName == this.previousName) {
+      newRandomName = this.generateRandomName()   //medan newRandomName är samma som previousName så gör man om generateRandomName
+
+    }
+
+    this.randomName = newRandomName   //när newRandomName får ett nytt unikt värde sparas det i variabeln randomName
+
+    this.previousName = this.randomName   //sätter previousName till det som nyss slumpats fram, för att det sedan ska kunna jämföras mot nästa slumpade namn
+
+    this.generatedName.emit(this.randomName)    //skickar det nya namnet via eventemitter
 
     
   }

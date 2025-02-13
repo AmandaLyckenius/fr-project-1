@@ -1,0 +1,23 @@
+.align-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.generate-box {
+    height: 50%;
+    gap: 20px;
+    padding: 40px;
+}
+
+.generated-name-text {
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.generated-name-text h5,
+.generated-name-text h2 {
+    padding: 20px;
+
+}
+
