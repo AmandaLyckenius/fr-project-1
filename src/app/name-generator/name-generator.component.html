@@ -1,15 +1,15 @@
 <div class="generate-box align-center">
     <h3>Generate your new pet's name!</h3>
-    <button (click)="assignRandomName()">Generate</button>
+    <button (click)="assignRandomName()" class="generate-name-btn">Generate</button>
+    
 
     <div class="generated-name-text align-center">
-
-        <h5>
-            Your new pet is going to be called:
-        </h5>
 
         <h2>{{randomName}} </h2>
 
     </div>
+
+
+    <button (click)="navigateToList()" class="previous-name-btn">See your previous generated names</button>
     
 </div>

@@ -5,16 +5,10 @@
   
   <div class="nav-links">
     <a routerLink="/name-generator">Home</a>
-    <a routerLink="/name-list">See list of already generated names</a>
+    
 
   </div>
- 
 </div>
 
-<app-name-generator (generatedName)="addGeneratedNameToList($event)" ></app-name-generator>
-<app-name-list [listOfGeneratedNames] = "listOfGeneratedNames" ></app-name-list>
-
-<!---Tar emot namnet från name-generator.component eventEmitter och kopplar det till app.component
-via metoden addGeneratedNameToList. $event pekar på lagrade parametern this.randomName-->
 
 <router-outlet />

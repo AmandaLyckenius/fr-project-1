@@ -1,8 +1,14 @@
 
-<div class="previous-name-box">
+<div class="previous-name-box align-center">
 
-    <p>Previous generated names</p>
-    <p>{{ listOfGeneratedNames.join(', ') }}</p>
+    <h2>Already Generated Names</h2>
+
+    <p *ngIf="listOfGeneratedNames.length > 0">
+        {{ listOfGeneratedNames.join(', ') }}
+    </p>
+    <p *ngIf="listOfGeneratedNames.length === 0">
+        No names have been generated yet.
+    </p>
 
 </div>
 

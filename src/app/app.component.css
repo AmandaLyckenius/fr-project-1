@@ -1,5 +1,5 @@
 .nav {
-    background-color: rgb(255, 195, 175);
+    background-color: rgb(198, 219, 198);
     padding: 10px;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .logo-name h2{
-    font-size: 3rem;
+    font-size: 3rem;  /*GÅR EJ ATT ÄNDRA FONT-SIZE?*/
 }
 
 .nav-links{
@@ -28,8 +28,4 @@
     cursor: pointer;
     text-decoration: underline;
 
-}
-
-.hidden {
-    display: none;
 }
