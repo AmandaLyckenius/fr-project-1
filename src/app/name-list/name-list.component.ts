@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { PetName } from '../models/pet-name.model';
 
 
 @Component({
@@ -11,12 +12,12 @@ import { Component } from '@angular/core';
 
 export class NameListComponent {
 
-  listOfGeneratedNames: string[] = []     //ändrat så att listan hämtas via routing istället för @input
+  listOfGeneratedNames: PetName[] = []     
 
   constructor() {
     const state = history.state.list;
     if (state) {
-      this.listOfGeneratedNames = state; 
+      this.listOfGeneratedNames = state as PetName[]; 
     }
   }
 

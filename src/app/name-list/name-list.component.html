@@ -3,15 +3,18 @@
 
     <h2>Already Generated Names</h2>
 
-    <p *ngIf="listOfGeneratedNames.length > 0">
-        {{ listOfGeneratedNames.join(', ') }}
-    </p>
+    <ul *ngIf="listOfGeneratedNames.length > 0">
+        <li *ngFor="let pet of listOfGeneratedNames">
+            {{ pet.name }} 
+        </li>
+    </ul>
+    
     <p *ngIf="listOfGeneratedNames.length === 0">
         No names have been generated yet.
     </p>
 
 </div>
 
-<!---  <li *ngFor="let name of listOfGeneratedNames">{{ name }}</li> -->
+
 
 

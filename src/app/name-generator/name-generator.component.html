@@ -1,11 +1,25 @@
 <div class="generate-box align-center">
     <h3>Generate your new pet's name!</h3>
     <button (click)="assignRandomName()" class="generate-name-btn">Generate</button>
+
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="includeFemale" >Female names
+        </label>
+        <label>
+            <input type="checkbox" [(ngModel)]="includeMale"> Male names
+        </label>
+        <label>
+            <input type="checkbox" [(ngModel)]="includeBoth">Names that works for both
+        </label>
+        
+    </div>
+
     
 
     <div class="generated-name-text align-center">
 
-        <h2>{{randomName}} </h2>
+        <h2>{{randomName?.name}} </h2>
 
     </div>
 
